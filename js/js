@@ -1,0 +1,59 @@
+var chat_messages = [
+
+		{
+			'user': 'Lim',
+			'message': 'I want to order a coffee',
+		},
+		{
+			'user': 'Lim',
+			'message': 'I want to order a tea',
+		},
+
+		{
+			'user': 'John',
+			'message': 'I want to sleep',
+			
+
+		},
+
+		{
+			'user': 'Corina',
+			'message': 'I want to go to the cinema',
+
+
+		},
+]
+
+function log_chat() {
+	var index;
+	for (index = 0; index < chat_messages.length; index++) {
+		var item = chat_messages[index]
+		console.log("user: " + item['user'] + "\n" + "message : " + item['message'])
+	}
+}
+
+function is_user_ok(user) {
+	if user == None:
+		return False
+	if not isinstance(user, str):
+		return False
+	if len(user) <= 0:
+		return False
+	return True
+}
+
+
+def point_chat_log(user):
+	if not is_user_ok(user):
+		return False
+	selection = []
+	for n in range(0, len(chat_messages)):
+		item = chat_messages[n]
+		if 'user' in item and item['user'] == user:
+			selection.append(item)
+	return selection
+
+local_var_selection = point_chat_log("Lim") 
+if isinstance(local_var_selection, list):
+	for i in range(0, len(local_var_selection)):
+		console.log(local_var_selection[i]['message'])
